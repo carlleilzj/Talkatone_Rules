@@ -117,6 +117,27 @@ rules:
 3. **有广告漏网**：在 QX 最近请求里找广告域名，提 issue 补规则  
 4. **规则位置**：Talkatone 规则应在 `FINAL` 之前；不要被过于宽泛的 `GEOIP,CN,direct` 提前截走 IP（已用 no-resolve 的 IP-CIDR 更稳）
 
+
+## 还是有广告？
+
+请按顺序检查：
+
+1. **同时启用**（缺一不可）  
+   - `Talkatone_Ads.list`（分流拦截）  
+   - `Talkatone_Ads_Rewrite.conf`（重写拦截素材/SDK）  
+2. 广告规则在 **所有规则最上面**（先于 Talkatone 分流、先于代理规则）  
+3. 远程资源点 **更新**，或删了重建  
+4. 开启 **HTTPS 解密**，并信任证书（重写需要）  
+5. **彻底杀掉** Talkatone 再开（清后台）  
+6. 打开 QX「最近请求」，刷出广告时看域名：  
+   - 若是 `smaato` / `inmobi` / `applovin` 等却没显示 reject → 规则没生效  
+   - 若是 `talkatone.com` 自身接口返回的广告位 → 域名拦截去不掉（服务端下发），只能尽量拦第三方 SDK  
+
+**去广告不需要节点**，策略必须是 `reject`。
+
+重写配置：  
+https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone_Ads_Rewrite.conf
+
 ## 参考来源
 
 - [czy13724/Surge Talkatone.list](https://github.com/czy13724/Surge)  
