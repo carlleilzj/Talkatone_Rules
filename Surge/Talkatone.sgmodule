@@ -1,0 +1,8 @@
+#!name=Talkatone 全面分流
+#!desc=Talkatone 核心走策略组 + 广告拦截。策略组名: Talkatone（请用美国节点）
+#!category=VoIP
+#!arguments=Talkatone:Talkatone
+
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/Surge/Talkatone_Ads.list,REJECT,update-interval=86400
+RULE-SET,https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/Surge/Talkatone.list,{{{Talkatone}}},update-interval=86400

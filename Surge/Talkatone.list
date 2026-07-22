@@ -1,0 +1,37 @@
+# Talkatone - Surge RULE-SET
+# raw: https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/Surge/Talkatone.list
+# 用法: RULE-SET,https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/Surge/Talkatone.list,Talkatone
+
+DOMAIN-SUFFIX,talkatone.com
+DOMAIN-SUFFIX,talkamobile.com
+DOMAIN-SUFFIX,tktn.at
+DOMAIN-SUFFIX,tktn.be
+DOMAIN,cnt.tktn.be
+DOMAIN,vm.talkatone.com
+DOMAIN,api.talkatone.com
+DOMAIN,www.talkatone.com
+DOMAIN,cdn.talkatone.com
+DOMAIN,media.talkatone.com
+DOMAIN,static.talkatone.com
+DOMAIN,sip.talkatone.com
+DOMAIN,push.talkatone.com
+DOMAIN-SUFFIX,tenor.com
+DOMAIN,media.tenor.com
+DOMAIN,tenor.googleapis.com
+IP-CIDR,23.19.73.39/32,no-resolve
+IP-CIDR,23.235.228.136/29,no-resolve
+IP-CIDR,23.253.145.244/32,no-resolve
+IP-CIDR,34.120.13.18/32,no-resolve
+IP-CIDR,50.117.27.0/24,no-resolve
+IP-CIDR,63.251.124.0/24,no-resolve
+IP-CIDR,69.46.75.0/24,no-resolve
+IP-CIDR,72.18.158.120/29,no-resolve
+IP-CIDR,104.244.53.0/24,no-resolve
+IP-CIDR,131.153.5.0/24,no-resolve
+IP-CIDR,131.153.7.0/24,no-resolve
+IP-CIDR,198.24.160.0/24,no-resolve
+IP-CIDR,198.24.161.0/24,no-resolve
+IP-CIDR,198.24.163.0/24,no-resolve
+IP-CIDR,198.24.183.0/24,no-resolve
+IP-CIDR,205.164.56.0/24,no-resolve
+IP-CIDR,216.172.154.0/24,no-resolve

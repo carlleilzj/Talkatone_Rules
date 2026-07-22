@@ -1,0 +1,39 @@
+# Talkatone 核心分流 - Quantumult X filter 格式
+# raw: https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone.list
+# 配合策略组: Talkatone（建议美国节点）
+
+HOST-SUFFIX,talkatone.com,Talkatone
+HOST-SUFFIX,talkamobile.com,Talkatone
+HOST-SUFFIX,tktn.at,Talkatone
+HOST-SUFFIX,tktn.be,Talkatone
+HOST,cnt.tktn.be,Talkatone
+HOST,vm.talkatone.com,Talkatone
+HOST,api.talkatone.com,Talkatone
+HOST,www.talkatone.com,Talkatone
+HOST,cdn.talkatone.com,Talkatone
+HOST,media.talkatone.com,Talkatone
+HOST,static.talkatone.com,Talkatone
+HOST,sip.talkatone.com,Talkatone
+HOST,push.talkatone.com,Talkatone
+
+HOST-SUFFIX,tenor.com,Talkatone
+HOST,media.tenor.com,Talkatone
+HOST,tenor.googleapis.com,Talkatone
+
+IP-CIDR,23.19.73.39/32,Talkatone
+IP-CIDR,23.235.228.136/29,Talkatone
+IP-CIDR,23.253.145.244/32,Talkatone
+IP-CIDR,34.120.13.18/32,Talkatone
+IP-CIDR,50.117.27.0/24,Talkatone
+IP-CIDR,63.251.124.0/24,Talkatone
+IP-CIDR,69.46.75.0/24,Talkatone
+IP-CIDR,72.18.158.120/29,Talkatone
+IP-CIDR,104.244.53.0/24,Talkatone
+IP-CIDR,131.153.5.0/24,Talkatone
+IP-CIDR,131.153.7.0/24,Talkatone
+IP-CIDR,198.24.160.0/24,Talkatone
+IP-CIDR,198.24.161.0/24,Talkatone
+IP-CIDR,198.24.163.0/24,Talkatone
+IP-CIDR,198.24.183.0/24,Talkatone
+IP-CIDR,205.164.56.0/24,Talkatone
+IP-CIDR,216.172.154.0/24,Talkatone
