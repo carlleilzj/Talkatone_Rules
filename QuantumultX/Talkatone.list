@@ -1,22 +1,36 @@
-# Talkatone 分流 - 对齐 LOWERTOP 策略
+# Talkatone 分流（业务）
 # raw: https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone.list
+# 策略组 Talkatone = 美国节点
 #
-# 策略组名: Talkatone = 美国节点（登录/消息）
-# 说明: talkatone.com 与通话 IP 走 DIRECT（与 LOWERTOP 一致）
-#       tktn.at / tktn.be / 语音留言 / 贴图 走 Talkatone 代理
+# 重要: 务必让 Talkatone_Ads.list 排在本规则【上方】
+# 本文件刻意不用过于宽泛的匹配去覆盖 lb-iad 广告子域；
+# 下列为业务必需主机（比单纯 HOST-SUFFIX,tktn.be 更安全）
 
-# ----- 节点质量检测（需代理）-----
+# 节点检测 / 中继
 HOST-WILDCARD,relay-*.tktn.be,Talkatone
 
-# ----- 需代理 -----
+# XMPP 消息
+HOST-WILDCARD,xmpp*.tktn.be,Talkatone
+HOST-WILDCARD,xmpp-*.tktn.be,Talkatone
+
+# API / 数据
+HOST,a1.tktn.be,Talkatone
+HOST,a2.tktn.be,Talkatone
+HOST,d.tktn.be,Talkatone
+HOST,d2.tktn.be,Talkatone
+HOST,api.tktn.be,Talkatone
+HOST,cnt.tktn.be,Talkatone
+
+# 其余 tktn（登录等）；广告 lb-iad 由 Ads 列表关键字优先 reject
 HOST-SUFFIX,tktn.at,Talkatone
 HOST-SUFFIX,tktn.be,Talkatone
+
 HOST-SUFFIX,vm.talkatone.com,Talkatone
 HOST-SUFFIX,tenor.com,Talkatone
 HOST,media.tenor.com,Talkatone
 HOST,tenor.googleapis.com,Talkatone
 
-# ----- 需直连（LOWERTOP 原版；广告子域已在 Ads.list 优先 reject）-----
+# 直连（LOWERTOP）
 HOST-SUFFIX,talkatone.com,direct
 HOST-SUFFIX,talkamobile.com,direct
 HOST-SUFFIX,agkn.com,direct
@@ -28,13 +42,11 @@ HOST-SUFFIX,ip-api.com,direct
 HOST-SUFFIX,kochava.com,direct
 HOST-SUFFIX,mobilefuse.com,direct
 
-# ----- 通话/短信 IP 直连 -----
 IP-CIDR,50.117.27.0/24,direct
 IP-CIDR,63.251.124.0/24,direct
 IP-CIDR,69.46.75.0/24,direct
 IP-CIDR,205.164.56.0/24,direct
 IP-CIDR,216.172.154.0/24,direct
-# 补充常见段（代理也可，默认跟原版走 direct；连不上可改 Talkatone）
 IP-CIDR,104.244.53.0/24,direct
 IP-CIDR,131.153.5.0/24,direct
 IP-CIDR,131.153.7.0/24,direct

@@ -1,15 +1,32 @@
-# Talkatone 去广告 - 基于 LOWERTOP/Shadowrocket-First Talkatone.sgmodule 转换
-# 源: https://github.com/LOWERTOP/Shadowrocket-First/blob/main/Talkatone.sgmodule
+# Talkatone 去广告 - LOWERTOP 转换 + 强化
 # raw: https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone_Ads.list
-#
-# 全部 reject，不需要节点。请放在分流规则之前。
+# 必须放在 Talkatone 分流规则【之前】！否则 tktn.be 会先匹配成代理，广告 LB 拦不住。
+# 策略全部 reject，不需要节点。
 
-# ----- LOWERTOP 关键补充（此前缺失）-----
+# ----- 最高优先：Talkatone 自家广告 / 关键字（防止被 host-suffix tktn.be 抢走）-----
+HOST-KEYWORD,lb-iad,reject
+HOST-KEYWORD,tk0x1,reject
+HOST-KEYWORD,smadex,reject
+HOST-KEYWORD,serveteck,reject
+HOST-KEYWORD,iteleserve,reject
+HOST-KEYWORD,bidswitch,reject
+HOST-WILDCARD,lb-iad-*.tktn.be,reject
+HOST-WILDCARD,*-ads.*.tktn.be,reject
+HOST-WILDCARD,ads-*.tktn.be,reject
+HOST-WILDCARD,ad-*.tktn.be,reject
+
+
 HOST-SUFFIX,tk0x1.com,reject
 HOST-SUFFIX,bidswitch.net,reject
 HOST-SUFFIX,iteleserve.com,reject
 HOST-SUFFIX,serveteck.com,reject
-HOST-WILDCARD,lb-iad-*.tktn.be,reject
+HOST-SUFFIX,adrta.com,reject
+HOST-SUFFIX,smadex.com,reject
+HOST-SUFFIX,creatives.smadex.com,reject
+HOST-SUFFIX,static-content-1.smadex.com,reject
+HOST-SUFFIX,br-trk.smadex.com,reject
+HOST-SUFFIX,jampp.com,reject
+HOST-SUFFIX,imp-lb-us2.jampp.com,reject
 HOST-SUFFIX,adrta.com,reject
 HOST-SUFFIX,creatives.smadex.com,reject
 HOST-SUFFIX,static-content-1.smadex.com,reject
