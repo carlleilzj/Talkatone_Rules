@@ -1,0 +1,7 @@
+# Talkatone Proxy - 走美国节点策略组 Talkatone
+# raw: https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone_Proxy.list
+HOST-WILDCARD,relay-*.tktn.be,Talkatone
+HOST-SUFFIX,tktn.at,Talkatone
+HOST-SUFFIX,tktn.be,Talkatone
+HOST-SUFFIX,vm.talkatone.com,Talkatone
+HOST-SUFFIX,tenor.com,Talkatone

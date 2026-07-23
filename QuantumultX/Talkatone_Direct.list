@@ -1,0 +1,17 @@
+# Talkatone Direct - 对应 converter 的 direct.arrs
+# raw: https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone_Direct.list
+HOST-SUFFIX,agkn.com,direct
+HOST-SUFFIX,cohere.com,direct
+HOST-SUFFIX,crashlytics.com,direct
+HOST-SUFFIX,inmobi.com,direct
+HOST-SUFFIX,inner-active.mobi,direct
+HOST-SUFFIX,ip-api.com,direct
+HOST-SUFFIX,kochava.com,direct
+HOST-SUFFIX,mobilefuse.com,direct
+HOST-SUFFIX,talkatone.com,direct
+HOST-SUFFIX,talkamobile.com,direct
+IP-CIDR,205.164.56.0/24,direct
+IP-CIDR,216.172.154.0/24,direct
+IP-CIDR,50.117.27.0/24,direct
+IP-CIDR,63.251.124.0/24,direct
+IP-CIDR,69.46.75.0/24,direct

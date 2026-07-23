@@ -1,171 +1,97 @@
-# Talkatone 去广告（加强版）- Quantumult X
+# Talkatone 去广告 - 基于 LOWERTOP/Shadowrocket-First Talkatone.sgmodule 转换
+# 源: https://github.com/LOWERTOP/Shadowrocket-First/blob/main/Talkatone.sgmodule
 # raw: https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone_Ads.list
-# 策略全部为 reject，不需要代理节点
-# 请把本规则放在所有分流规则之前，并开启「更新」
+#
+# 全部 reject，不需要节点。请放在分流规则之前。
 
-# === Google / AdMob ===
-HOST-KEYWORD,googleads,reject
-HOST-SUFFIX,googleads.g.doubleclick.net,reject
-HOST-SUFFIX,googleads.g.doubleclick-cn.net,reject
-HOST-SUFFIX,googleadservices.com,reject
-HOST-SUFFIX,googleadservices-cn.com,reject
-HOST-SUFFIX,adservice.google.com,reject
-HOST-SUFFIX,adservice.google.com.hk,reject
-HOST-SUFFIX,pagead2.googlesyndication.com,reject
-HOST-SUFFIX,pagead2.googlesyndication-cn.com,reject
-HOST-SUFFIX,tpc.googlesyndication.com,reject
-HOST-SUFFIX,tpc.googlesyndication-cn.com,reject
-HOST-SUFFIX,googlesyndication.com,reject
-HOST-SUFFIX,doubleclick.net,reject
-HOST-SUFFIX,g.doubleclick.net,reject
-HOST-SUFFIX,ad.doubleclick.net,reject
-HOST-SUFFIX,static.doubleclick.net,reject
-HOST-SUFFIX,fundingchoicesmessages.google.com,reject
-HOST-SUFFIX,lh3.googleadsserving.cn,reject
-HOST-SUFFIX,googletagservices.com,reject
-HOST-SUFFIX,www.googletagservices-cn.com,reject
-HOST-SUFFIX,googletagmanager.com,reject
-HOST-SUFFIX,mediavisor.doubleclick.net,reject
+# ----- LOWERTOP 关键补充（此前缺失）-----
+HOST-SUFFIX,tk0x1.com,reject
+HOST-SUFFIX,bidswitch.net,reject
+HOST-SUFFIX,iteleserve.com,reject
+HOST-SUFFIX,serveteck.com,reject
+HOST-WILDCARD,lb-iad-*.tktn.be,reject
+HOST-SUFFIX,adrta.com,reject
+HOST-SUFFIX,creatives.smadex.com,reject
+HOST-SUFFIX,static-content-1.smadex.com,reject
+HOST-SUFFIX,br-trk.smadex.com,reject
+HOST-SUFFIX,smadex.com,reject
+HOST-SUFFIX,imp-lb-us2.jampp.com,reject
+HOST-SUFFIX,jampp.com,reject
 
-# === Amazon ===
+# ----- Amazon -----
+HOST-SUFFIX,aax.amazon-adsystem.com,reject
+HOST-SUFFIX,aax-fe.amazon-adsystem.com,reject
+HOST-SUFFIX,aax-fe-sin.amazon-adsystem.com,reject
 HOST-SUFFIX,amazon-adsystem.com,reject
-HOST,aax.amazon-adsystem.com,reject
-HOST,aax-fe.amazon-adsystem.com,reject
-HOST,aax-fe-sin.amazon-adsystem.com,reject
-HOST,c.amazon-adsystem.com,reject
-HOST,mads.amazon-adsystem.com,reject
-HOST,s.amazon-adsystem.com,reject
+HOST-SUFFIX,c.amazon-adsystem.com,reject
+HOST-SUFFIX,mads.amazon-adsystem.com,reject
 
-# === Smaato / PubMatic / Criteo ===
-HOST-SUFFIX,smaato.net,reject
-HOST-SUFFIX,smaato.com,reject
-HOST-SUFFIX,pubmatic.com,reject
-HOST-SUFFIX,criteo.com,reject
-HOST-SUFFIX,criteo.net,reject
-
-# === InMobi ===
-HOST-SUFFIX,inmobi.com,reject
-HOST-SUFFIX,inmobicdn.net,reject
+# ----- InMobi 广告子域（根域 inmobi.com 建议 DIRECT，见分流 list）-----
+HOST-SUFFIX,ads.inmobi.com,reject
+HOST-SUFFIX,config.inmobi.com,reject
+HOST-SUFFIX,au.w.inmobi.com,reject
+HOST-SUFFIX,b.de.inmobi.com,reject
+HOST-SUFFIX,et-eus.w.inmobi.com,reject
+HOST-SUFFIX,ic.de.inmobi.com,reject
+HOST-SUFFIX,dspbeacons.ihasdsp.inmobi.com,reject
+HOST-SUFFIX,dspbeacons.old.ihasdsp.inmobi.com,reject
 HOST-SUFFIX,i.l.inmobicdn.net,reject
+HOST-SUFFIX,i.l-dsp.inmobicdn.net,reject
+HOST-SUFFIX,supply.inmobicdn.net,reject
 
-# === MobileFuse / Fyber / DT ===
-HOST-SUFFIX,mobilefuse.com,reject
-HOST-SUFFIX,fyber.com,reject
-HOST-SUFFIX,inner-active.mobi,reject
-HOST-SUFFIX,digitalturbine.com,reject
-
-# === Liftoff / Vungle ===
-HOST-SUFFIX,liftoff.io,reject
-HOST-SUFFIX,liftoff-creatives.io,reject
-HOST-SUFFIX,vungle.com,reject
-HOST-SUFFIX,api.vungle.com,reject
-HOST-SUFFIX,ads.api.vungle.com,reject
-HOST,impression.link,reject
-HOST,impression-asia.liftoff.io,reject
-HOST,cdn.liftoff-creatives.io,reject
-
-# === AppLovin / Unity / ironSource ===
-HOST-SUFFIX,applovin.com,reject
-HOST-SUFFIX,applvn.com,reject
-HOST-SUFFIX,unityads.unity3d.com,reject
-HOST-SUFFIX,unity3d.com,reject
-HOST-KEYWORD,unityads,reject
-HOST-SUFFIX,ironsrc.com,reject
-HOST-SUFFIX,ironsource.mobi,reject
-HOST-SUFFIX,supersonicads.com,reject
-HOST-SUFFIX,is.com,reject
-HOST-SUFFIX,ssacdn.com,reject
-
-# === Mintegral / Pangle / ByteDance ===
-HOST-SUFFIX,mintegral.com,reject
-HOST-SUFFIX,mintegral.net,reject
-HOST-SUFFIX,mgsdk.mbridge.com,reject
-HOST-SUFFIX,mbridge.com,reject
-HOST-SUFFIX,pangle.io,reject
-HOST-SUFFIX,pangle-b.io,reject
-HOST-SUFFIX,pangleglobal.com,reject
-HOST-SUFFIX,ads.tiktok.com,reject
-HOST-KEYWORD,pangle,reject
-
-# === Appier / Tappx / Moloco ===
+# ----- PubMatic / Criteo / Appier -----
+HOST-SUFFIX,ads.pubmatic.com,reject
+HOST-SUFFIX,pubmatic.com,reject
+HOST-SUFFIX,bidder.criteo.com,reject
+HOST-SUFFIX,gum.criteo.com,reject
+HOST-SUFFIX,criteo.com,reject
+HOST-SUFFIX,adsappier.com,reject
 HOST-SUFFIX,appier.net,reject
 HOST-SUFFIX,appiersig.com,reject
-HOST-SUFFIX,adsappier.com,reject
+HOST-SUFFIX,cr.adsappier.com,reject
+HOST-SUFFIX,mt-usw.appiersig.com,reject
+HOST-SUFFIX,vst.c.appier.net,reject
+
+# ----- Liftoff / MobileFuse / Inner-active 广告 CDN -----
+HOST-SUFFIX,cdn.liftoff-creatives.io,reject
+HOST-SUFFIX,impression-asia.liftoff.io,reject
+HOST-SUFFIX,impression.link,reject
+HOST-SUFFIX,cdn.mobilefuse.com,reject
+HOST-SUFFIX,mfx.mobilefuse.com,reject
+HOST-SUFFIX,cdn2.inner-active.mobi,reject
+HOST-SUFFIX,sdk-events.inner-active.mobi,reject
+HOST-SUFFIX,exchange-b-events.inner-active.mobi,reject
+HOST-SUFFIX,wv.inner-active.mobi,reject
+HOST-SUFFIX,cdn-f.adsmoloco.com,reject
+HOST-SUFFIX,tr-asia.adsmoloco.com,reject
+
+# ----- Smaato / Tappx / Fyber / Taboola -----
+HOST-SUFFIX,ets-ap-southeast-1.track.smaato.net,reject
+HOST-SUFFIX,sdk-dnt.ad.smaato.net,reject
+HOST-SUFFIX,sdk-files.smaato.net,reject
+HOST-SUFFIX,sdk-hb-cfg.smaato.net,reject
+HOST-SUFFIX,smaato.net,reject
+HOST-SUFFIX,ins.track.tappx.com,reject
+HOST-SUFFIX,ssp.api.tappx.com,reject
 HOST-SUFFIX,tappx.com,reject
-HOST-SUFFIX,adsmoloco.com,reject
-HOST-SUFFIX,moloco.com,reject
-HOST,cdn-f.adsmoloco.com,reject
-HOST,tr-asia.adsmoloco.com,reject
-
-# === 其他常见移动广告 / 归因 ===
+HOST-SUFFIX,skadnetworks.fyber.com,reject
 HOST-SUFFIX,taboola.com,reject
-HOST-SUFFIX,outbrain.com,reject
-HOST-SUFFIX,chartboost.com,reject
-HOST-SUFFIX,adcolony.com,reject
-HOST-SUFFIX,tapjoy.com,reject
-HOST-SUFFIX,startappservice.com,reject
-HOST-SUFFIX,startappexchange.com,reject
-HOST-SUFFIX,mopub.com,reject
-HOST-SUFFIX,ads.mopub.com,reject
-HOST-SUFFIX,rubiconproject.com,reject
-HOST-SUFFIX,openx.net,reject
-HOST-SUFFIX,adsrvr.org,reject
-HOST-SUFFIX,adform.net,reject
-HOST-SUFFIX,bidswitch.net,reject
-HOST-SUFFIX,casalemedia.com,reject
-HOST-SUFFIX,3lift.com,reject
-HOST-SUFFIX,sharethrough.com,reject
-HOST-SUFFIX,indexww.com,reject
-HOST-SUFFIX,pubnative.net,reject
-HOST-SUFFIX,verve.com,reject
-HOST-SUFFIX,ads.yahoo.com,reject
-HOST-SUFFIX,advertising.com,reject
-HOST-SUFFIX,adsafeprotected.com,reject
-HOST-SUFFIX,moatads.com,reject
-HOST-SUFFIX,scorecardresearch.com,reject
-HOST-SUFFIX,crwdcntrl.net,reject
-HOST-SUFFIX,rlcdn.com,reject
-HOST-SUFFIX,agkn.com,reject
-HOST-SUFFIX,bluekai.com,reject
-HOST-SUFFIX,exelator.com,reject
-HOST-SUFFIX,demdex.net,reject
-HOST-SUFFIX,everesttech.net,reject
-HOST-SUFFIX,serving-sys.com,reject
-HOST-SUFFIX,adsolid.com,reject
-HOST-SUFFIX,ad.smaato.net,reject
 
-# === Adjust / AppsFlyer / Branch / Kochava（广告归因，拦了可少拉广告）===
-HOST-SUFFIX,adjust.com,reject
-HOST-SUFFIX,adjust.net.in,reject
-HOST-SUFFIX,adjust.world,reject
-HOST-SUFFIX,appsflyer.com,reject
-HOST-SUFFIX,appsflyersdk.com,reject
-HOST-SUFFIX,app.appsflyer.com,reject
-HOST-SUFFIX,branch.io,reject
-HOST-SUFFIX,app.link,reject
-HOST-SUFFIX,kochava.com,reject
-HOST-SUFFIX,control.kochava.com,reject
+# ----- Google Ads -----
+HOST-SUFFIX,googleads.g.doubleclick.net,reject
+HOST-SUFFIX,googleads.g.doubleclick-cn.net,reject
+HOST-SUFFIX,googlesyndication.com,reject
+HOST-SUFFIX,pagead2.googlesyndication-cn.com,reject
+HOST-SUFFIX,tpc.googlesyndication-cn.com,reject
+HOST-SUFFIX,fundingchoicesmessages.google.com,reject
+HOST-SUFFIX,lh3.googleadsserving.cn,reject
+HOST-SUFFIX,www.googletagservices-cn.com,reject
 HOST-SUFFIX,app-analytics-services.com,reject
-HOST,view.adjust.com,reject
+HOST-SUFFIX,view.adjust.com,reject
+HOST-SUFFIX,ep7.facebook.com,reject
 
-# === Jampp / my.com / 杂项 ===
-HOST-SUFFIX,jampp.com,reject
-HOST,imgx.jampp.com,reject
-HOST,alt-r.my.com,reject
-HOST,ep7.facebook.com,reject
-HOST-SUFFIX,ads.facebook.com,reject
-HOST-SUFFIX,an.facebook.com,reject
-HOST-SUFFIX,advertising.yahoo.com,reject
-HOST-SUFFIX,admob.com,reject
-HOST-SUFFIX,ad.mail.ru,reject
-HOST-SUFFIX,my.com,reject
-HOST-SUFFIX,target.my.com,reject
-HOST-SUFFIX,toponad.com,reject
-HOST-SUFFIX,toponadss.com,reject
-HOST-SUFFIX,anythinktech.com,reject
-HOST-SUFFIX,sigmob.com,reject
-HOST-SUFFIX,sigmob.cn,reject
-HOST-SUFFIX,kuaishouzt.com,reject
-HOST-SUFFIX,adkwai.com,reject
-HOST-SUFFIX,gdt.qq.com,reject
-HOST-SUFFIX,wxsnsdy.tc.qq.com,reject
+# ----- Firebase（LOWERTOP 会拦，可减少广告配置下发；若推送异常可删）-----
+HOST-SUFFIX,firebaseinstallations.googleapis.com,reject
+HOST-SUFFIX,firebaselogging-pa.googleapis.com,reject
+HOST-SUFFIX,firebaseremoteconfig.googleapis.com,reject
+HOST-SUFFIX,firebase-settings.crashlytics.com,reject

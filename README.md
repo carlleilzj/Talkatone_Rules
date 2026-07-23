@@ -138,6 +138,45 @@ rules:
 重写配置：  
 https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone_Ads_Rewrite.conf
 
+
+## LOWERTOP 转换说明（有效去广告）
+
+本仓库广告规则已按 [LOWERTOP/Shadowrocket-First Talkatone.sgmodule](https://github.com/LOWERTOP/Shadowrocket-First/blob/main/Talkatone.sgmodule) 转换对齐，对应你使用的：
+
+- reject 转换: `.../sub/reject.arrs?url=...Talkatone.sgmodule`
+- direct 转换: `.../sub/direct.arrs?url=...Talkatone.sgmodule`
+
+### 和旧版我们规则的关键差异
+
+| 项 | LOWERTOP（有效） | 旧版 |
+|----|------------------|------|
+| `lb-iad-*.tktn.be` | **REJECT**（Talkatone 自家广告 LB） | 未拦 |
+| `tk0x1.com` / `smadex.com` / `serveteck.com` 等 | REJECT | 未拦 |
+| `mobilefuse.com` / `inmobi.com` 根域 | **DIRECT**（只拦广告子域） | 整域 reject |
+| `talkatone.com` | DIRECT | 曾走代理 |
+| 通话 IP | DIRECT | 曾走代理 |
+| `tktn.be` / `tktn.at` | 代理 | 代理 |
+
+### Quantumult X 推荐（更新后请强制刷新远程）
+
+```ini
+[policy]
+static=Talkatone, 美国节点1, 美国节点2, proxy, direct
+
+[filter_remote]
+https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone_Ads.list, tag=Talkatone广告, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone.list, tag=Talkatone分流, update-interval=86400, opt-parser=true, enabled=true
+```
+
+可选：
+
+```ini
+[rewrite_remote]
+https://raw.githubusercontent.com/carlleilzj/Talkatone_Rules/main/QuantumultX/Talkatone_Ads_Rewrite.conf, tag=Talkatone广告重写, update-interval=86400, opt-parser=true, enabled=true
+```
+
+更新后杀掉 Talkatone 重开。最近请求里若出现 `lb-iad-....tktn.be` 且策略为 **reject**，说明广告规则命中。
+
 ## 参考来源
 
 - [czy13724/Surge Talkatone.list](https://github.com/czy13724/Surge)  
